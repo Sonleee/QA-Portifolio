@@ -1,4 +1,4 @@
-# 📋 Casos de Teste — Sauce Demo
+#  Casos de Teste — Sauce Demo
 
 Este documento detalha os cenários de teste manuais executados no site [Sauce Demo](https://www.saucedemo.com/).
 
@@ -10,7 +10,7 @@ Este documento detalha os cenários de teste manuais executados no site [Sauce D
     3. Digitar `secret_sauce` no campo "Password"
     4. Clicar no botão "Login"
 - **Resultado Esperado:** O usuário deve ser redirecionado para a página de produtos.
-- **Resultado Atual:** Passou conforme esperado. ✅
+- **Resultado Atual:** Passou conforme esperado.
 
 ## Cenário 02: Login com Senha Incorreta
 - **Objetivo:** Validar o erro ao inserir credenciais inválidas.
@@ -20,7 +20,7 @@ Este documento detalha os cenários de teste manuais executados no site [Sauce D
     3. Digitar `senha_errada`
     4. Clicar no botão "Login"
 - **Resultado Esperado:** Exibir a mensagem: "Epic sadface: Username and password do not match any user in this service".
-- **Resultado Atual:** Passou conforme esperado. ✅
+- **Resultado Atual:** Passou conforme esperado.
 
 ## Cenário 03: Login de Usuário Bloqueado
 - **Objetivo:** Validar comportamento de conta bloqueada.
@@ -30,4 +30,9 @@ Este documento detalha os cenários de teste manuais executados no site [Sauce D
     3. Digitar `secret_sauce`
     4. Clicar no botão "Login"
 - **Resultado Esperado:** Exibir a mensagem: "Epic sadface: Sorry, this user has been locked out."
-- **Resultado Atual:** Passou conforme esperado. ✅
+- **Resultado Atual:** Passou conforme esperado.
+
+## Cypress
+- **Fluxos Automatizados:**
+  - Login com sucesso e tratamento de erros.
+  - Fluxo completo de compra: seleção de produto, carrinho, checkout e confirmação de pedido.
