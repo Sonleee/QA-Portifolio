@@ -1,0 +1,33 @@
+# 📋 Casos de Teste — Sauce Demo
+
+Este documento detalha os cenários de teste manuais executados no site [Sauce Demo](https://www.saucedemo.com/).
+
+## Cenário 01: Login com Sucesso
+- **Objetivo:** Validar se um usuário cadastrado consegue logar corretamente.
+- **Passos:**
+    1. Acessar o site https://www.saucedemo.com/
+    2. Digitar `standard_user` no campo "Username"
+    3. Digitar `secret_sauce` no campo "Password"
+    4. Clicar no botão "Login"
+- **Resultado Esperado:** O usuário deve ser redirecionado para a página de produtos.
+- **Resultado Atual:** Passou conforme esperado. ✅
+
+## Cenário 02: Login com Senha Incorreta
+- **Objetivo:** Validar o erro ao inserir credenciais inválidas.
+- **Passos:**
+    1. Acessar o site
+    2. Digitar `standard_user`
+    3. Digitar `senha_errada`
+    4. Clicar no botão "Login"
+- **Resultado Esperado:** Exibir a mensagem: "Epic sadface: Username and password do not match any user in this service".
+- **Resultado Atual:** Passou conforme esperado. ✅
+
+## Cenário 03: Login de Usuário Bloqueado
+- **Objetivo:** Validar comportamento de conta bloqueada.
+- **Passos:**
+    1. Acessar o site
+    2. Digitar `locked_out_user`
+    3. Digitar `secret_sauce`
+    4. Clicar no botão "Login"
+- **Resultado Esperado:** Exibir a mensagem: "Epic sadface: Sorry, this user has been locked out."
+- **Resultado Atual:** Passou conforme esperado. ✅
