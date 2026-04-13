@@ -1,0 +1,24 @@
+{
+  "name": "qa-portifolio",
+  "version": "1.0.0",
+  "description": "Este documento detalha os cenários de teste manuais executados no site [Sauce Demo](https://www.saucedemo.com/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sonleee/QA-Portifolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sonleee/QA-Portifolio/issues"
+  },
+  "homepage": "https://github.com/Sonleee/QA-Portifolio#readme",
+  "devDependencies": {
+    "cypress": "^15.13.1"
+  }
+}
