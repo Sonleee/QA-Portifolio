@@ -1,82 +1,99 @@
-#  Casos de Teste — Sauce Demo
+#  QA Portfolio — Sauce Demo
 
-Este documento detalha os cenários de teste manuais executados no site [Sauce Demo](https://www.saucedemo.com/).
+Este repositório contém testes manuais, automação web e testes de API realizados no site [Sauce Demo](https://www.saucedemo.com/).
 
-## Cenário 01: Login com Sucesso
-- **Objetivo:** Validar se um usuário cadastrado consegue logar corretamente.
+---
+
+##  Testes Manuais
+
+### Cenário 01: Login com Sucesso
+- **Objetivo:** Validar login com credenciais válidas.
 - **Passos:**
-    1. Acessar o site https://www.saucedemo.com/
-    2. Digitar `standard_user` no campo "Username"
-    3. Digitar `secret_sauce` no campo "Password"
-    4. Clicar no botão "Login"
-- **Resultado Esperado:** O usuário deve ser redirecionado para a página de produtos.
-- **Resultado Atual:** Passou conforme esperado.
+  1. Acessar o site
+  2. Inserir usuário `standard_user`
+  3. Inserir senha `secret_sauce`
+  4. Clicar em Login
+- **Resultado Esperado:** Redirecionamento para a página de produtos.
+- **Resultado Atual:**  Passou
 
-## Cenário 02: Login com Senha Incorreta
-- **Objetivo:** Validar o erro ao inserir credenciais inválidas.
-- **Passos:**
-    1. Acessar o site
-    2. Digitar `standard_user`
-    3. Digitar `senha_errada`
-    4. Clicar no botão "Login"
-- **Resultado Esperado:** Exibir a mensagem: "Epic sadface: Username and password do not match any user in this service".
-- **Resultado Atual:** Passou conforme esperado.
+---
 
-## Cenário 03: Login de Usuário Bloqueado
-- **Objetivo:** Validar comportamento de conta bloqueada.
-- **Passos:**
-    1. Acessar o site
-    2. Digitar `locked_out_user`
-    3. Digitar `secret_sauce`
-    4. Clicar no botão "Login"
-- **Resultado Esperado:** Exibir a mensagem: "Epic sadface: Sorry, this user has been locked out."
-- **Resultado Atual:** Passou conforme esperado.
+### Cenário 02: Login com Senha Incorreta
+- **Objetivo:** Validar mensagem de erro para credenciais inválidas.
+- **Resultado Esperado:** Exibir mensagem de erro de login.
+- **Resultado Atual:**  Passou
 
-## Cypress
-- **Fluxos Automatizados:**
-  - Login com sucesso e tratamento de erros.
-  - Fluxo completo de compra: seleção de produto, carrinho, checkout e confirmação de pedido.
+---
 
-### 2. Testes de API — JSONPlaceholder
+### Cenário 03: Usuário Bloqueado
+- **Objetivo:** Validar comportamento de usuário bloqueado.
+- **Resultado Esperado:** Exibir mensagem de conta bloqueada.
+- **Resultado Atual:**  Passou
 
-- **API testada:** https://jsonplaceholder.typicode.com/
-- **Ferramenta:** Postman
+---
 
-#### Cobertura de testes
+##  Automação Web — Cypress
 
-- **GET:** Buscar post por ID
-  - Validação de status code (200 OK)
-  - Validação da estrutura da resposta (JSON)
+### Fluxos automatizados:
 
-- **POST:** Criação de novo post
-  - Validação de status (201 Created)
-  - Validação de dados retornados
+-  Login com sucesso
+-  Login com erro
+-  Adição de produtos ao carrinho
+-  Remoção de produtos
+-  Múltiplos itens no carrinho
+-  Fluxo completo de checkout
+-  Validação de formulário (erros de preenchimento)
+-  Persistência de sessão (refresh)
+-  Bloqueio de acesso sem login
+-  Uso de dados dinâmicos nos testes
 
-- **PUT:** Atualização de post existente
-  - Validação de status (200 OK)
-  - Validação de alteração de conteúdo
+---
 
-- **DELETE:** Remoção de post
-  - Validação de status (200 OK ou 204 No Content)
+##  Testes de API — Postman
 
-#### Testes negativos (erros)
+- **API:** https://jsonplaceholder.typicode.com/
 
-- Buscar recurso inexistente
-  - Status esperado: 404 Not Found
-  - Validação de resposta vazia
+###  Cobertura de testes
 
-- Criar recurso com dados inválidos
-  - Validação de comportamento da API
-  - Validação de tempo de resposta
+- **GET:** Consulta de dados
+- **POST:** Criação de recurso
+- **PUT:** Atualização de recurso
+- **DELETE:** Remoção de recurso
 
-- Deletar recurso inexistente
-  - Status esperado: 404 Not Found
+---
 
-#### Testes de performance
+### Testes negativos
 
-- Validação de tempo de resposta da API
-  - Tempo esperado: menor que 1000ms
+- Requisição para recurso inexistente (404)
+- Envio de dados inválidos
+- Exclusão de recurso inexistente
 
-#### Observações
+---
 
-A API utilizada é pública e simulada (JSONPlaceholder), portanto некоторые comportamentos podem não refletir uma API real (ex: aceitar dados inválidos). Ainda assim, os testes foram estruturados seguindo boas práticas de validação de APIs REST.
+### Testes de performance
+
+- Validação de tempo de resposta (< 1000ms)
+
+---
+
+## Tecnologias utilizadas
+
+- Cypress
+- Postman
+- JavaScript
+- Git & GitHub
+
+---
+
+##  Observações
+
+A API utilizada é pública e simulada (JSONPlaceholder), portanto alguns comportamentos podem não refletir APIs reais.
+
+---
+
+##  Autor
+
+Desenvolvido por Leonardo Barbosa
+
+🔗 GitHub: https://github.com/Sonleee/QA-Portifolio
+🔗 LinkedIn: www.linkedin.com/in/leonardo-barbosa-depaula
