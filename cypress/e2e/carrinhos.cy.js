@@ -67,4 +67,24 @@ describe('Funcionalidade de Carrinho e Logout - Sauce Demo', () => {
     cy.get('[data-test="login-button"]').should('be.visible')
   })
 
+  it('Deve preencher formulário de checkout com dados dinâmicos', () => {
+    // Adiciona produto e navega até o checkout
+    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+    cy.get('.shopping_cart_link').click()
+    cy.get('[data-test="checkout"]').click()
+
+    // Dados dinâmicos
+    const nome = 'Teste' + Math.floor(Math.random() * 1000)
+    const sobrenome = 'QA' + Math.floor(Math.random() * 1000)
+
+    // Preenche o formulário
+    cy.get('[data-test="firstName"]').type(nome)
+    cy.get('[data-test="lastName"]').type(sobrenome)
+    cy.get('[data-test="postalCode"]').type('12345')
+    cy.get('[data-test="continue"]').click()
+
+    // Valida que avançou
+    cy.url().should('include', '/checkout-step-two.html')
+  })
+
 })
